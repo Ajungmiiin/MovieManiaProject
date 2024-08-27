@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400, 500, 600, 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard-Regular';
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+}
+
+.bgBlack {
+  @apply bg-black;
+}
+
+.input {
+  @apply w-full px-3 py-2 rounded-sm text-base outline-none;
+}
+
+.icon {
+  @apply text-2xl sm:text-3xl;
+}
+
+.errorMessage {
+  @apply text-red-400;
+}
+
+.movie-detail-action-button {
+  @apply flex flex-col items-center justify-center cursor-pointer;
+}
+
+.toast {
+  @apply text-center font-semibold py-4 bg-white rounded-lg text-lg flex items-center justify-center gap-2 shadow-md;
+}
+
+/* 스와이퍼 */
+.swiper-wrapper {
+  @apply items-center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply hidden w-[50px] h-[50px] absolute z-50 top-[50%] bottom-[50%] translate-y-[-50%] bg-contain rounded-full transition-opacity sm:block;
+}
+
+.swiper-button-prev {
+  @apply left-[20px] bg-left-arrow;
+}
+
+.swiper-button-next {
+  @apply right-[20px] bg-right-arrow;
+}
+
+.swiper-button-disabled {
+  @apply opacity-50;
+}
