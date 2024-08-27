@@ -9,8 +9,8 @@ const MyMovie = ({
   identifier,
 }: {
   movie: MyMovieProps;
-  userId: string;
-  identifier: string;
+  userId?: string;
+  identifier?: string;
 }) => {
   return (
     <li>
@@ -27,8 +27,8 @@ const MyMovie = ({
       </Link>
       <MyMovieRemoveButton
         movieId={movie.id}
-        userId={userId}
-        identifier={identifier}
+        userId={userId as string}
+        identifier={identifier as string}
       />
     </li>
   );

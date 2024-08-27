@@ -28,18 +28,14 @@ const ReviewForm = ({
   const [value, setValue] = useState<string>('');
 
   const toast = useToast();
+  if (!writeReviewState.error && writeReviewState.success) {
+    router.back();
+    toast.success('리뷰가 작성되었습니다.');
+  }
 
-  useEffect(() => {
-    if (!writeReviewState.error && writeReviewState.success) {
-      router.back();
-      toast.success('리뷰가 작성되었습니다.');
-    }
-
-    if (writeReviewState.error && !writeReviewState.success) {
-      toast.error('잠시 후 다시 시도해주세요.');
-    }
-  }, [writeReviewState]);
-
+  if (writeReviewState.error && !writeReviewState.success) {
+    toast.error('잠시 후 다시 시도해주세요.');
+  }
   return (
     <>
       <div className="px-4 py-4 flex justify-between items-center border-b border-gray-200">
