@@ -11,25 +11,25 @@ export default auth((req) => {
 
   if (nextUrl.pathname.includes('/login')) {
     if (isLoggedIn) {
-      return Response.redirect('http://localhost:3000');
+      return Response.redirect('https://movie-mania-rouge.vercel.app/');
     }
   }
 
   if (nextUrl.pathname.includes('/sign-up')) {
     if (isLoggedIn) {
-      return Response.redirect('http://localhost:3000');
+      return Response.redirect('https://movie-mania-rouge.vercel.app/');
     }
   }
 
   if (nextUrl.pathname.includes('/my')) {
     if (!isLoggedIn) {
-      return Response.redirect('http://localhost:3000/login');
+      return Response.redirect('https://movie-mania-rouge.vercel.app/login');
     }
   }
 
   if (nextUrl.pathname.includes('/review')) {
     if (!isLoggedIn) {
-      return Response.redirect('http://localhost:3000/login');
+      return Response.redirect('https://movie-mania-rouge.vercel.app/login');
     }
   }
 });
