@@ -53,6 +53,8 @@ const RegisterForm = () => {
       email: userInfo.email,
       password: userInfo.password,
     });
+
+    return router.refresh();
   };
 
   function onInvalid(error: any) {
