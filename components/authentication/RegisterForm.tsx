@@ -48,13 +48,12 @@ const RegisterForm = () => {
 
     // 가입이 완료되면 로그인
     await signIn('credentials', {
-      redirect: true,
-      redirectTo: '/',
+      redirect: false,
       email: userInfo.email,
       password: userInfo.password,
     });
 
-    return router.refresh();
+    return router.replace('/');
   };
 
   function onInvalid(error: any) {
