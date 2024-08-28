@@ -13,7 +13,7 @@ const MovieRow = async ({ title, fetchUrl }: MovieRowProps) => {
     <section className="p-4 max-w-screen-xl mx-auto bg-white text-black">
       {/* SECTION TITLE (CATEGORY)*/}
       <div className="flex mb-2">
-        <h3 className="pl-3 text-xl font-semibold sm:text-2xl lg:text-2xl">
+        <h3 className="text-xl font-semibold sm:text-2xl lg:text-2xl">
           {title}
         </h3>
       </div>

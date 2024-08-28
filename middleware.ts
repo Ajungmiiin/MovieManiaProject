@@ -26,6 +26,12 @@ export default auth((req) => {
       return Response.redirect('http://localhost:3000/login');
     }
   }
+
+  if (nextUrl.pathname.includes('/review')) {
+    if (!isLoggedIn) {
+      return Response.redirect('http://localhost:3000/login');
+    }
+  }
 });
 
 export const config = {

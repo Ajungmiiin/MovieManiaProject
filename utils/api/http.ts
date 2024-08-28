@@ -41,7 +41,7 @@ export const getSearchMovie = async (searchTerm: string) => {
   }
 
   const response = await getMovieData.get<{ results: MovieData[] }>(
-    `/search/multi?include_adult=false&query=${searchTerm}`
+    `/search/movie?include_adult=false&query=${searchTerm}`
   );
   const data = response.data;
 
