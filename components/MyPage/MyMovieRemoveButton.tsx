@@ -16,11 +16,7 @@ const MyMovieRemoveButton = ({
 }: RemoveButtonProps) => {
   const router = useRouter();
   const toast = useToast();
-  const removeHandler = async (
-    movieId: string,
-    userId: string,
-    identifier: string
-  ) => {
+  const removeHandler = async () => {
     const response = await fetch('/api/my', {
       method: 'DELETE',
       headers: {
@@ -36,7 +32,7 @@ const MyMovieRemoveButton = ({
     const responseMessage = await response.json();
 
     if (response.ok) {
-      router.refresh();
+      location.reload();
       toast.success(responseMessage.message);
     }
 
@@ -48,7 +44,7 @@ const MyMovieRemoveButton = ({
   return (
     <button
       className="text-center bg-red-700 rounded-md py-2 w-full font-semibold text-sm hover:opacity-90 transition-opacity"
-      onClick={() => removeHandler(movieId, userId, identifier)}
+      onClick={removeHandler}
     >
       삭제하기
     </button>

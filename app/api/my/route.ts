@@ -16,8 +16,10 @@ export const DELETE = async (request: NextRequest) => {
         { $pull: { movieList: { id: movieId } } }
       );
 
-      revalidatePath(`/my`, 'layout');
-      revalidatePath(`/my/bookmark/all`, 'layout');
+      const movieList = await BookMark.findOne({ userId: userId });
+      console.log(movieList);
+      revalidatePath(`/my`);
+      revalidatePath(`/my/bookmark/all`, 'page');
 
       return new NextResponse(
         JSON.stringify({
@@ -35,8 +37,8 @@ export const DELETE = async (request: NextRequest) => {
         { $pull: { movieList: { id: movieId } } }
       );
 
-      revalidatePath(`/my`, 'layout');
-      revalidatePath(`/my/watching/all`, 'layout');
+      revalidatePath(`/my`);
+      revalidatePath(`/my/watching/all`, 'page');
 
       return new NextResponse(
         JSON.stringify({

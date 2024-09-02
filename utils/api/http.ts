@@ -2,7 +2,6 @@ import { getMovieData } from './api';
 
 export const fetchMovie = async (fetchUrl: string) => {
   const response = await getMovieData.get(fetchUrl);
-
   const data = response.data.results;
 
   // 리스트를 출력하는 데 필요한 데이터만 뽑아서 리턴

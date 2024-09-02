@@ -26,7 +26,7 @@ export const POST = async (request: NextRequest) => {
     });
 
     if (response!.result) {
-      revalidatePath('/my', 'page');
+      revalidatePath('/my', 'layout');
       return new NextResponse(
         JSON.stringify({ message: '성공적으로 저장되었습니다.' }),
         {

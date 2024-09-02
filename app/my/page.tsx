@@ -1,7 +1,5 @@
 import { auth } from '@/auth';
-import MovieList, { movieListProps } from '@/components/MovieData/MovieList';
 import MovieReview from '@/components/MovieDetail/Review/MovieReview';
-import MovieReviewList from '@/components/MovieDetail/Review/MovieReviewList';
 import MyMovieList from '@/components/MyPage/MyMovieList';
 import LogoutButton from '@/components/authentication/LogoutButton';
 import { Comment } from '@/type/Review.';

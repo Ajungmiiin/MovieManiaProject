@@ -28,7 +28,8 @@ export const POST = async (request: NextRequest) => {
     });
 
     if (response!.result) {
-      revalidatePath('/my', 'page');
+      revalidatePath('/my');
+
       return new NextResponse(
         JSON.stringify({ message: '북마크에 추가되었습니다.' }),
         {

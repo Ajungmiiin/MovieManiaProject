@@ -25,7 +25,6 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
 
   //  액션 관련 fn
   const handleAction = async (type: string) => {
-    console.log(type);
     let requestUrl;
 
     // 로그인이 안되어 있을 때
@@ -62,6 +61,7 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
 
       if (response.ok) {
         const responseMessage = await response.json();
+        router.refresh();
         toast.success(responseMessage.message);
         setPending(false);
       }

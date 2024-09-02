@@ -17,13 +17,14 @@ const MyMovieList = ({
   identifier: string;
   userId: string;
 }) => {
+  console.log('영화 리스트', movies);
   return (
     <>
       <ul className="grid grid-cols-2 gap-4 md:flex md:justify-around md:gap-4">
         {movies.slice(0, 4).map((movie) => (
           <MyMovie
             movie={movie}
-            key={movie._id}
+            key={movie.id}
             userId={userId}
             identifier={identifier}
           />

@@ -12,6 +12,7 @@ const MyMovie = ({
   userId?: string;
   identifier?: string;
 }) => {
+  console.log(movie.title, movie.imageSrc);
   return (
     <li>
       <Link href={`/movie/${movie.id}`}>

@@ -3,7 +3,6 @@
 import { signIn, signOut } from '@/auth';
 import { CredentialsSignin } from 'next-auth';
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 
 interface formStateType {
   error: boolean;
@@ -22,6 +21,8 @@ export const loginHandler = async (
     });
 
     revalidatePath('/', 'layout');
+    revalidatePath('/movie/[id]', 'page');
+
     return null;
   } catch (error) {
     if (error instanceof CredentialsSignin) {
