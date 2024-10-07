@@ -46,7 +46,7 @@ const page = async ({
   }
 
   return (
-    <section className="p-8">
+    <section className="p-8 max-w-screen-lg mx-auto">
       <h3 className="text-center text-2xl mb-4 font-bold">{contentTitle}</h3>
 
       {/* 검색 */}
@@ -54,7 +54,7 @@ const page = async ({
 
       {/* 모든 영화 */}
       {identifier !== 'review' && (
-        <ul className="grid grid-cols-2">
+        <ul className="grid grid-cols-2 gap-8 lg:grid-cols-3">
           {/* 검색어가 없을 때 */}
           {!search &&
             content.map((movie: movieType) => (
@@ -73,7 +73,7 @@ const page = async ({
 
       {/* 작성한 모든 리뷰 */}
       {identifier === 'review' && (
-        <ul className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+        <ul className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
           {/* 검색어가 없을 때 */}
           {!search &&
             content.map((review: Comment) => (
