@@ -20,8 +20,8 @@ export const loginHandler = async (
       password: formData.get('password'),
     });
 
-    revalidatePath('/', 'layout');
     revalidatePath('/movie/[id]', 'page');
+    revalidatePath('/');
 
     return null;
   } catch (error) {

@@ -5,9 +5,11 @@ import CastList from '@/components/MovieDetail/CastList';
 import ActionButtonGroup from '@/components/MovieDetail/ActionButtonGroup';
 import MovieImage from '@/components/MovieImage';
 import MovieReviewSection from '@/components/MovieDetail/Review/MovieReviewSection';
-import Link from 'next/link';
+import { auth } from '@/auth';
 
 const page = async ({ params: { id } }: { params: { id: string } }) => {
+  const user = await auth();
+  console.log('movie', user);
   const movieData = await fetchMovieDetail(id);
 
   return (
@@ -40,7 +42,10 @@ const page = async ({ params: { id } }: { params: { id: string } }) => {
         <div className="max-w-screen-xl mx-auto md:flex md:items-start">
           <div className="md:order-2 md:ml-12">
             {/* 액션버튼 */}
-            <ActionButtonGroup movie={movieData} />
+            <ActionButtonGroup
+              movie={movieData}
+              userId={user?.user?.id || null}
+            />
             <div>
               {/* 태그라인 & 오버뷰 */}
               {movieData.tagline && (

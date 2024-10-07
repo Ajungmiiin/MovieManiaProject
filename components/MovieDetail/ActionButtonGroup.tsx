@@ -1,7 +1,5 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
-
 import { MdBookmarkAdd } from 'react-icons/md';
 import { FaCommentDots } from 'react-icons/fa';
 import { IoEyeSharp } from 'react-icons/io5';
@@ -9,13 +7,16 @@ import { useToast } from '@/hooks/useToast';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
+const ActionButtonGroup = ({
+  movie,
+  userId,
+}: {
+  movie: MovieData;
+  userId: string | null;
+}) => {
   const [pending, setPending] = useState<boolean>(false);
   const router = useRouter();
-  const { data: session } = useSession();
   const toast = useToast();
-
-  const isLoggedIn = !!session;
 
   const movieData = {
     title: movie.title || movie.original_title,
@@ -28,7 +29,7 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
     let requestUrl;
 
     // 로그인이 안되어 있을 때
-    if (!isLoggedIn) {
+    if (!userId) {
       toast.error('로그인 후 이용하실 수 있습니다.');
       setPending(false);
       return;
@@ -54,7 +55,7 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: session!.user!.id,
+          userId,
           movieData,
         }),
       });
@@ -72,6 +73,7 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
         setPending(false);
       }
     } catch (error) {
+      console.log(error);
       toast.error('잠시 후 다시 이용해주세요.');
       setPending(false);
     }
@@ -79,7 +81,7 @@ const ActionButtonGroup = ({ movie }: { movie: MovieData }) => {
 
   const handleWrtieReview = () => {
     setPending(true);
-    if (!isLoggedIn) {
+    if (!userId) {
       toast.error('로그인 후 이용하실 수 있습니다.');
       setPending(false);
       return;
