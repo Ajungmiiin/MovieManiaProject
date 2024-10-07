@@ -18,7 +18,7 @@ const LoginForm = () => {
 
   //  서버액션에서 오류없이 null 값을 반환했다면 redirect
   if (state === null) {
-    return router.refresh();
+    router.refresh();
   }
   return (
     <>
