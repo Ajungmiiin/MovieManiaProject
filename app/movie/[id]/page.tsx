@@ -9,7 +9,6 @@ import { auth } from '@/auth';
 
 const page = async ({ params: { id } }: { params: { id: string } }) => {
   const user = await auth();
-  console.log('movie', user);
   const movieData = await fetchMovieDetail(id);
 
   return (

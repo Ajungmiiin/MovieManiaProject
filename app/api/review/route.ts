@@ -62,6 +62,7 @@ export const DELETE = async (request: NextRequest) => {
       }
     );
   } catch (err) {
+    console.log(err);
     return new NextResponse(
       JSON.stringify({
         message: err,

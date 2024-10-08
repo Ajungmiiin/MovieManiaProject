@@ -9,7 +9,6 @@ const montserrat = Montserrat({ weight: '900', subsets: ['latin'] });
 
 const MainHeader = async () => {
   const isLoggedIn = await auth();
-  console.log(isLoggedIn);
   return (
     <header className="w-full bg-black fixed z-50">
       <div className="max-w-screen-xl m-auto p-2 text-lg flex justify-between items-center relative">

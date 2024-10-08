@@ -12,7 +12,6 @@ const page = async () => {
     loginUser!.user!.id as string
   );
 
-  console.log(bookmark);
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* 유저이름 & 로그아웃버튼 */}

@@ -17,7 +17,6 @@ export const DELETE = async (request: NextRequest) => {
       );
 
       const movieList = await BookMark.findOne({ userId: userId });
-      console.log(movieList);
       revalidatePath(`/my`);
       revalidatePath(`/my/bookmark/all`, 'page');
 
