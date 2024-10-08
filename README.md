@@ -54,6 +54,7 @@ TMDB API와 NextJs 를 이용해 제작한 영화 리뷰 작성 사이트입니�
 
 ## 마이페이지
 - 최대 4개의 항목만 볼 수 있음, 4개 이상 있을 시 **모두보기**를 통해 모든 항목 조회 가능
+  
 ![MyPage](https://github.com/user-attachments/assets/a712f306-6b80-451c-a29c-f163839dff8f)
 ![MyPage-2](https://github.com/user-attachments/assets/c553ad5a-5c0d-4c5c-ae95-f0ca1123b407)
 
