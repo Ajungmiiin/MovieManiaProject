@@ -36,7 +36,7 @@ TMDB API와 NextJs 를 이용해 제작한 영화 리뷰 작성 사이트입니�
 
 ### 회원가입 폼 유효성 검사
 - 실시간 유효성 검사를 통해 사용자에게 즉각적인 피드백 제공
-- 
+  
 ![SignupForm-invalid-2](https://github.com/user-attachments/assets/4f80d4e0-9f62-49ba-9f98-c3749bdf9580)
 ![SignupForm-invalid](https://github.com/user-attachments/assets/59266cef-64fb-45d3-8d11-6c39d355ef16)
 
@@ -50,7 +50,7 @@ TMDB API와 NextJs 를 이용해 제작한 영화 리뷰 작성 사이트입니�
 
 ### Toast UI 알림창
 - Recoil 상태관리 라이브러리 사용, 상황에 따라 다른 피드백 제공
-- 
+  
 ![ToastError](https://github.com/user-attachments/assets/a1dbd7bc-bda6-44de-81b3-eb5ef74a7012)
 ![ToastComplete](https://github.com/user-attachments/assets/57e5da29-d150-48d2-bf9c-aaaa96cbc9c1)
 
